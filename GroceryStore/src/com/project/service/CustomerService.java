@@ -15,11 +15,10 @@ public interface CustomerService
 	public abstract List<Customer> getAllCustomers() throws CustomException, WrongEntryException;
 	
 	//Admin features
-	public abstract Customer searchCustomer(int customerID) throws CustomException, WrongEntryException;
+	public abstract List<Customer> searchCustomerByID(int customerID) throws CustomException, WrongEntryException;
 	public abstract List<Customer> searchCustomerFirst(String fname) throws CustomException, WrongEntryException;
 	public abstract List<Customer> searchCustomerLast(String lname) throws CustomException, WrongEntryException; 
 	public abstract List<Customer> searchCustomerWIC(boolean isWIC) throws CustomException, WrongEntryException;
-	public abstract List<Customer> searchAllCustomers() throws CustomException, WrongEntryException;	
 	public abstract List<Order> searchCustomerOrders(int customerID) throws CustomException, WrongEntryException;
 
 	

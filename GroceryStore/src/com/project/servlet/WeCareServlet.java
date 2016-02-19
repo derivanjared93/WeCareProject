@@ -1,6 +1,7 @@
 package com.project.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.project.exception.CustomException;
+import com.project.exception.WrongEntryException;
+import com.project.pojo.Food;
 import com.project.service.CustomerService;
 import com.project.service.CustomerServiceImplMySql;
 import com.project.service.FoodService;
@@ -23,6 +27,7 @@ public class WeCareServlet extends HttpServlet {
 	private static final String ERROR_PAGE = "/jsp/error.jsp";   
 	private static final String CHECKOUT_PAGE = "/jsp/checkout.jsp";
 	private static final String SHOPPING_CART_PAGE = "/jsp/cart.jsp";
+	private static final String CATALOG_PAGE = "/jsp/catalog.jsp";
 	CustomerService custService = new CustomerServiceImplMySql();
 	FoodService foodService = new FoodServiceImplMySql();
     /**
@@ -44,6 +49,18 @@ public class WeCareServlet extends HttpServlet {
 		else if(action != null && action.equals("cart"))
 		{
 			forwardView = SHOPPING_CART_PAGE;
+		}
+		else if(action != null && action.equals("catalog"))
+		{
+			try 
+			{
+				List<Food> foodList = foodService.getAllFood();
+				request.setAttribute("list_food", foodList);
+
+				forwardView = CATALOG_PAGE;
+			} 
+			catch (CustomException e){e.printStackTrace();} 
+			catch (WrongEntryException e){e.printStackTrace();}
 		}
 		RequestDispatcher dispatch = request.getRequestDispatcher(forwardView);
 		try 

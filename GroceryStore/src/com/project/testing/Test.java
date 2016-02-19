@@ -18,7 +18,7 @@ public class Test
 		Order o;
 		List<Food> currentOrder = new ArrayList<Food>();
 		
-		f.setFoodCategory(Category.DAIRY);
+		f.setFoodCategory(Category.DAIRY.name());
 		Food f1 = new Food("Milk", 1.99, Category.DAIRY, true, 396, "Dean's 2%");
 		Food f2 = new Food("Eggs", 2.99, Category.PROTEIN, true, 400, "Eggselent");
 		Food f3 = new Food("Bananas", .45, Category.FRUIT, true, 50, "Chiquita");
@@ -32,7 +32,7 @@ public class Test
 		
 		c.setCurrentOrder(currentOrder);
 		o = new Order(c.getCustomerID(), f1.getFoodPrice(), "2/18/2016");
-		
+		o.getOrderTotal();
 	}
 
 }

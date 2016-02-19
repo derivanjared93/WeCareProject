@@ -33,9 +33,9 @@ public class CustomerServiceImplMySql implements CustomerService {
 	}
 
 	@Override
-	public Customer searchCustomer(int customerID) throws CustomException, WrongEntryException 
+	public List<Customer> searchCustomerByID(int customerID) throws CustomException, WrongEntryException 
 	{
-		return null;
+		return custDAO.getCustomerByID(customerID);
 	}
 
 	@Override
@@ -53,25 +53,19 @@ public class CustomerServiceImplMySql implements CustomerService {
 	@Override
 	public List<Customer> searchCustomerWIC(boolean isWIC) throws CustomException, WrongEntryException 
 	{
-		return null;
-	}
-
-	@Override
-	public List<Customer> searchAllCustomers() throws CustomException, WrongEntryException 
-	{
-		return null;
+		return custDAO.getCustomerByWIC(isWIC);
 	}
 
 	@Override
 	public List<Order> searchCustomerOrders(int customerID) throws CustomException, WrongEntryException
 	{
-		return null;
+		return custDAO.getCustomerOrders(customerID);
 	}
 
 	@Override
 	public List<Customer> getAllCustomers() throws CustomException, WrongEntryException 
 	{
-		return null;
+		return custDAO.getCustomerByID(0);
 	}
 
 }

@@ -7,7 +7,10 @@ public class Food implements Serializable
 
 	private static final long serialVersionUID = -7647602036804074319L;
 
-	public enum Category { FRUIT, VEGETABLE, PROTEIN, DAIRY, GRAIN, OIL }
+	public enum Category 
+	{ 
+		FRUIT, VEGETABLE, PROTEIN, DAIRY, GRAIN, OIL 
+	}
 	
 	private int foodID;
 	private String foodName;
@@ -67,9 +70,9 @@ public class Food implements Serializable
 		return foodCategory;
 	}
 	
-	public void setFoodCategory(Category foodCategory) 
+	public void setFoodCategory(String foodCategory) 
 	{
-		this.foodCategory = foodCategory;
+		this.foodCategory = Category.valueOf(foodCategory);
 	}
 	
 	public boolean isWIC() 
