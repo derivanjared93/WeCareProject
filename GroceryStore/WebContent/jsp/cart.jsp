@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<jsp:include page="header.jsp" /> 
+
 <table border="1">
 	<tr>
 	<th>Picture</th>
@@ -34,9 +36,9 @@ Total:  $5.00<br>
 
 <input type="hidden" name="action" value="checkout">
 <input type="submit" value="Proceed to Checkout">
-
-
 </form>
 
+
+<jsp:include page="footer.jsp" /> 
 </body>
 </html>

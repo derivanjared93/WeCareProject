@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="header.jsp" /><br> 
 <!--  Shipping Address, Billing Info, along with an Order Summary somewhere on the page as well. 
 		Maybe allow customer to alter their order on the cart page and have the changes carry over here as well.-->
 		This is the checkout screen.  Obviously a work in progress.
+		
+<br><jsp:include page="footer.jsp" />
 </body>
 </html>

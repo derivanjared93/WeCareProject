@@ -7,6 +7,7 @@
 <title>We Care!</title>
 </head>
 <body>
+<jsp:include page="header.jsp" /><br>
 
 	Welcome to the We Care website!  Currently under construction!
 	
@@ -14,5 +15,7 @@
 	<input type="hidden" name="action" value="cart">
 	<input type="submit" value="Proceed to Shopping Cart">
 	</form>
+	
+<br><jsp:include page="footer.jsp" />
 </body>
 </html>

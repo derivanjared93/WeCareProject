@@ -7,6 +7,20 @@
 <title>Please Log-In to Continue</title>
 </head>
 <body>
+	<form action="${pageContext.request.contextPath}/login.do" method="post">
+		Please login here:<br>
+		Email Address
+		<input type="text" name="email"><br>
+		Password
+		<input type="password" name="password"><br><br>
+		
+		<input type="submit" value="Log In"><br>
+	</form>	
+	
+	<form action="${pageContext.request.contextPath}/wecare.do" method="post">
+	<input type="submit" value="Sign Up">
+	</form>
+
 
 </body>
 </html>
